@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { setEngine } = require('crypto');
 const express = require('express');
 const app = express();
@@ -18,5 +19,6 @@ app.use(cookieParser());
 app.use("/users" , usersRouter);
 app.use("/owners" , ownersRouter);
 app.use("/products" , productsRouter);
+console.log("ENV:", process.env.NODE_ENV);
 
 app.listen(3000);
